@@ -8,4 +8,9 @@ public class Destroy : MonoBehaviour
     {
         Destroy(gameObject);
     }
+
+    public void DestroyOther(Collider2D other)
+    {
+        Destroy(other.gameObject);
+    }
 }

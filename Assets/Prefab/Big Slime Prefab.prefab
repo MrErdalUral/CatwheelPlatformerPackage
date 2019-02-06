@@ -887,6 +887,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2817826721266199157, guid: 585fe3b704cbe784bbd95111c3ed8926,
         type: 3}
+      propertyPath: OnSpawnEnd.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2817826721266199157, guid: 585fe3b704cbe784bbd95111c3ed8926,
+        type: 3}
       propertyPath: SpawnPrefab
       value: 
       objectReference: {fileID: 6217619340361500761, guid: a0c0d3cd6d1cb1f47bc622c0c668f889,
@@ -970,6 +975,71 @@ PrefabInstance:
         type: 3}
       propertyPath: SpawnVelocity
       value: 300
+      objectReference: {fileID: 0}
+    - target: {fileID: 2817826721266199157, guid: 585fe3b704cbe784bbd95111c3ed8926,
+        type: 3}
+      propertyPath: OnSpawnEnd.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2817826721266199157, guid: 585fe3b704cbe784bbd95111c3ed8926,
+        type: 3}
+      propertyPath: OnSpawnEnd.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2817826721266199157, guid: 585fe3b704cbe784bbd95111c3ed8926,
+        type: 3}
+      propertyPath: OnSpawnEnd.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: ResetOutlineColor
+      objectReference: {fileID: 0}
+    - target: {fileID: 2817826721266199157, guid: 585fe3b704cbe784bbd95111c3ed8926,
+        type: 3}
+      propertyPath: OnSpawnEnd.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 2817826721266199157, guid: 585fe3b704cbe784bbd95111c3ed8926,
+        type: 3}
+      propertyPath: OnSpawnStart.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2817826721266199157, guid: 585fe3b704cbe784bbd95111c3ed8926,
+        type: 3}
+      propertyPath: OnSpawnStart.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: SetOutlineColorToIndex
+      objectReference: {fileID: 0}
+    - target: {fileID: 2817826721266199157, guid: 585fe3b704cbe784bbd95111c3ed8926,
+        type: 3}
+      propertyPath: OnSpawnStart.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2817826721266199157, guid: 585fe3b704cbe784bbd95111c3ed8926,
+        type: 3}
+      propertyPath: OnSpawnStart.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 2817826721266199157, guid: 585fe3b704cbe784bbd95111c3ed8926,
+        type: 3}
+      propertyPath: OnSpawnStart.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: SetTrigger
+      objectReference: {fileID: 0}
+    - target: {fileID: 2817826721266199157, guid: 585fe3b704cbe784bbd95111c3ed8926,
+        type: 3}
+      propertyPath: OnSpawnStart.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2817826721266199157, guid: 585fe3b704cbe784bbd95111c3ed8926,
+        type: 3}
+      propertyPath: OnSpawnStart.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 2817826721266199157, guid: 585fe3b704cbe784bbd95111c3ed8926,
+        type: 3}
+      propertyPath: OnSpawnStart.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
+      value: Attack
+      objectReference: {fileID: 0}
+    - target: {fileID: 2817826721266199157, guid: 585fe3b704cbe784bbd95111c3ed8926,
+        type: 3}
+      propertyPath: OnSpawnStart.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 2407268080439928042, guid: 585fe3b704cbe784bbd95111c3ed8926,
         type: 3}

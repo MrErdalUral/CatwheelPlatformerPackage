@@ -1,4 +1,5 @@
 ﻿using System.Collections;
+using Assets.Input_Handlers;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -16,10 +17,11 @@ public class Spawner : MonoBehaviour
     public Vector2 TimerRange;
     public float DelayTime = 0.5f;
     public UnityEvent OnSpawnStart;
-    public UnityEvent OnSpawnEnd;
+    public GameObjectUnityEvent OnSpawnEnd;
     public UnityEvent OnOutOfSpawns;
     public UnityEvent OnSpawnCooldown;
     public int SpawnCount = 1;
+    public Transform SpawnedObjectParent;
 
     [SerializeField]
     private Vector2 _spawnDirection;
@@ -74,11 +76,11 @@ public class Spawner : MonoBehaviour
         if (SpawnPosition)
             pos = SpawnPosition.position;
 
-        var obj = (GameObject)Instantiate(SpawnPrefab, pos, Quaternion.identity);
+        var obj = (GameObject)Instantiate(SpawnPrefab, pos, Quaternion.identity, SpawnedObjectParent);
         var body = obj.GetComponent<Rigidbody2D>();
         if (body)
             body.velocity = SpawnDirection * SpawnVelocity;
-        OnSpawnEnd.Invoke();
+        OnSpawnEnd.Invoke(obj);
     }
 
     private void ResetCooldown()
