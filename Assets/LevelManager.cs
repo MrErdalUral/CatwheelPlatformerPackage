@@ -35,17 +35,11 @@ public class LevelManager : MonoBehaviour
             _levels = new List<Level>();
     }
 
-    public void UpdateCurrentLevel()
+    public void UpdateCurrentLevel(Level newLevel)
     {
-        var newCurrentLevel = levels.FirstOrDefault(m => m.LevelState == LevelState.Playing || m.LevelState == LevelState.Starting);
-        if (newCurrentLevel == null)
-        {
-            Debug.Log("No level on playing state");
-            return;
-        }
-        if(newCurrentLevel != _currentLevel)
-            OnCurrentLevelChanged.Invoke(newCurrentLevel.gameObject);
-        _currentLevel = newCurrentLevel;
+        if(newLevel != _currentLevel)
+            OnCurrentLevelChanged.Invoke(newLevel.gameObject);
+        _currentLevel = newLevel;
     }
 
     public void SetCamera(GameObject levelGameObject)

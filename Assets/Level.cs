@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using Assets.Input_Handlers;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -10,10 +11,10 @@ public class Level : MonoBehaviour
 
     private LevelState _targetLevelState;
 
-    public UnityEvent OnLevelReady;
-    public UnityEvent OnLevelStarting;
-    public UnityEvent OnLevelPlaying;
-    public UnityEvent OnLevelEnded;
+    public LevelUnityEvent OnLevelReady;
+    public LevelUnityEvent OnLevelStarting;
+    public LevelUnityEvent OnLevelPlaying;
+    public LevelUnityEvent OnLevelEnded;
 
 
     public LevelState LevelState
@@ -21,23 +22,29 @@ public class Level : MonoBehaviour
         get { return _levelState; }
         set
         {
+            if(_levelState == value) return;
             _targetLevelState = value;
-            switch (value)
-            {
-                case LevelState.Ready:
-                    OnLevelReady.Invoke();
-                    break;
-                case LevelState.Starting:
-                    OnLevelStarting.Invoke();
-                    break;
-                case LevelState.Playing:
-                    OnLevelPlaying.Invoke();
-                    break;
-                case LevelState.Ended:
-                    OnLevelEnded.Invoke();
-                    break;
-            }
+            ApplyState(value);
             _levelState = _targetLevelState;
+        }
+    }
+
+    private void ApplyState(LevelState value)
+    {
+        switch (value)
+        {
+            case LevelState.Ready:
+                OnLevelReady.Invoke(this);
+                break;
+            case LevelState.Starting:
+                OnLevelStarting.Invoke(this);
+                break;
+            case LevelState.Playing:
+                OnLevelPlaying.Invoke(this);
+                break;
+            case LevelState.Ended:
+                OnLevelEnded.Invoke(this);
+                break;
         }
     }
 
@@ -62,7 +69,7 @@ public class Level : MonoBehaviour
 
     void Awake()
     {
-        LevelState = LevelState.Ready;
+        ApplyState(_levelState);
     }
 
 }
