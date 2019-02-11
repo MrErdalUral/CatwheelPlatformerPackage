@@ -44,13 +44,16 @@ public class LevelManager : MonoBehaviour
 
     public void SetCamera(GameObject levelGameObject)
     {
-        var movement = _mainCamera.GetComponent<KinematicLerpMovement>();
+        var movement = _mainCamera.GetComponent<CameraKinematicLerpMovement>();
         if (movement == null)
         {
-            movement = _mainCamera.gameObject.AddComponent<KinematicLerpMovement>();
+            movement = _mainCamera.gameObject.AddComponent<CameraKinematicLerpMovement>();
             movement.MoveTime = 4;
         }
 
         movement.SetTargetPosition2D(levelGameObject.transform.position);
+        var level = levelGameObject.GetComponent<Level>();
+        if (level == null) return;
+        movement.TargetSize = level.CameraSize;
     }
 }

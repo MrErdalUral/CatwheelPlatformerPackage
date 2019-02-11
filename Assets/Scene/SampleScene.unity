@@ -359,6 +359,11 @@ PrefabInstance:
       propertyPath: _levelState
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5498918096529786859, guid: d1e29e9105eb7894a8b53c04d188f758,
+        type: 3}
+      propertyPath: CameraSize
+      value: 45
+      objectReference: {fileID: 0}
     - target: {fileID: 2661614308741671377, guid: d1e29e9105eb7894a8b53c04d188f758,
         type: 3}
       propertyPath: OnTriggerEnter.m_PersistentCalls.m_Calls.Array.data[0].m_Target
