@@ -14,9 +14,8 @@ public class Knockback : MonoBehaviour
         _rigidbody2D = GetComponent<Rigidbody2D>();
     }
 
-    public void ApplyDamageKnockback(DamageHealth damageHealth)
+    public void ApplyDamageKnockback(Damage damage)
     {
-        var dir = (Vector2)(transform.position - damageHealth.transform.position).normalized;
-        _rigidbody2D.velocity = dir * damageHealth.Knockback;
+        _rigidbody2D.velocity = damage.Knockback *  damage.KnockbackDirection;
     }
 }

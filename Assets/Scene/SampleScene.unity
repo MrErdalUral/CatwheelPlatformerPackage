@@ -792,22 +792,22 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 8716951647268199269, guid: d1e29e9105eb7894a8b53c04d188f758,
-        type: 3}
-      propertyPath: OnTriggerEnter.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 911506093}
-    - target: {fileID: 8716951647268199269, guid: d1e29e9105eb7894a8b53c04d188f758,
-        type: 3}
-      propertyPath: OnTriggerEnter.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: SetStarting
-      objectReference: {fileID: 0}
     - target: {fileID: 2661614308741671377, guid: d1e29e9105eb7894a8b53c04d188f758,
         type: 3}
       propertyPath: OnTriggerEnter.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 604948459}
     - target: {fileID: 2661614308741671377, guid: d1e29e9105eb7894a8b53c04d188f758,
+        type: 3}
+      propertyPath: OnTriggerEnter.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: SetStarting
+      objectReference: {fileID: 0}
+    - target: {fileID: 8716951647268199269, guid: d1e29e9105eb7894a8b53c04d188f758,
+        type: 3}
+      propertyPath: OnTriggerEnter.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 911506093}
+    - target: {fileID: 8716951647268199269, guid: d1e29e9105eb7894a8b53c04d188f758,
         type: 3}
       propertyPath: OnTriggerEnter.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: SetStarting
@@ -880,6 +880,10 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 523125079, guid: 31c5c00c816420c4b81cf41417dd3a69, type: 3}
+      propertyPath: DamageStats.Knockback
+      value: 250
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 31c5c00c816420c4b81cf41417dd3a69, type: 3}

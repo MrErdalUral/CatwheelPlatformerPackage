@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -7,8 +8,12 @@ using UnityEngine;
 /// </summary>
 public class DamageHealth : MonoBehaviour
 {
-    public float Knockback = 250;
-    public float AttackDamage = 1;
+    [SerializeField]
+    public Damage DamageStats = new Damage
+    {
+        Knockback = 250,
+        AttackDamage = 1
+    };
     public void Damage(Collider2D other)
     {
         var otherHealth = other.gameObject.GetComponent<Health>();
@@ -17,6 +22,16 @@ public class DamageHealth : MonoBehaviour
             Debug.Log("Other object does not have a health script attached");
             return;
         }
-        otherHealth.TakeDamage(this);
+
+        DamageStats.KnockbackDirection = (other.transform.position - transform.position).normalized;
+        otherHealth.TakeDamage(DamageStats);
     }
+}
+[Serializable]
+public struct Damage
+{
+    public float Knockback;
+    [HideInInspector]
+    public Vector2 KnockbackDirection;
+    public float AttackDamage;
 }

@@ -13,7 +13,7 @@ public class Health : MonoBehaviour
     [SerializeField] private HealthObject _currentHealthObject;
 
     public FloatUnityEvent OnHealthChanged;
-    public DamageHealthUnityEvent OnTakeDamage;
+    public DamageUnityEvent OnTakeDamage;
     public FloatUnityEvent OnHealDamage;
     public float DeathTime = 1f;
     public UnityEvent OnDeath;
@@ -49,7 +49,7 @@ public class Health : MonoBehaviour
         _takeDamageCooldown -= Time.deltaTime;
     }
 
-    public void TakeDamage(DamageHealth damageHealth)
+    public void TakeDamage(Damage damageHealth)
     {
         if (_takeDamageCooldown > 0) return;
         Debug.Log(gameObject.tag + " Health - " + damageHealth.AttackDamage);
