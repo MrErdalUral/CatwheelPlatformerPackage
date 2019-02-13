@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using Assets.Input_Handlers;
 using UnityEngine;
@@ -6,7 +7,7 @@ using UnityEngine.Events;
 
 public class Level : MonoBehaviour
 {
-    public float CameraSize = 70;
+    public float LevelCameraSize = 70;
     [SerializeField]
     private LevelState _levelState;
 
