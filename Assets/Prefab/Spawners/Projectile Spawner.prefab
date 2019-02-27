@@ -1,0 +1,291 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &8753589649040129144
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 2809348418247113149, guid: 1c629418daad2fe44aec4cc3453d3358,
+    type: 3}
+  m_PrefabInstance: {fileID: 8386351429991998207}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 830575723356559795}
+  - component: {fileID: 1005560360366102316}
+  - component: {fileID: 8427178858329396308}
+  - component: {fileID: 1805226928293303019}
+  m_Layer: 12
+  m_Name: Projectile Spawner
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &830575723356559795
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 6053115871461973110, guid: 1c629418daad2fe44aec4cc3453d3358,
+    type: 3}
+  m_PrefabInstance: {fileID: 8386351429991998207}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8753589649040129144}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 16.180012, y: -4.527527, z: 0}
+  m_LocalScale: {x: 2, y: 2, z: 2}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1005560360366102316
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 5940889172296061673, guid: 1c629418daad2fe44aec4cc3453d3358,
+    type: 3}
+  m_PrefabInstance: {fileID: 8386351429991998207}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8753589649040129144}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9454a52d57e03f94f9041cfec85d2ec5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SpawnPrefab: {fileID: 6061326500579825166, guid: cab871c7bdd3d8141b2550db18946b1b,
+    type: 3}
+  TimerRange: {x: 1, y: 5}
+  DelayTime: 0.3
+  OnSpawnStart:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_MethodName: SetTrigger
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Attack
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 0}
+        m_MethodName: SetOutlineColorToIndex
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 8427178858329396308}
+        m_MethodName: Output
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 1
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  OnSpawnEnd:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_MethodName: ResetOutlineColor
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1805226928293303019}
+        m_MethodName: AddVelocity
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_TypeName: Assets.Input_Handlers.GameObjectUnityEvent, Assembly-CSharp, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  OnOutOfSpawns:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_MethodName: set_CurrentStateIndex
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  OnSpawnCooldown:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  SpawnCount: 10
+  SpawnedObjectParent: {fileID: 0}
+  BurstCount: 1
+  BurstTimeDelay: 0.05
+  _spawnDirection: {x: 0, y: 0}
+  SpawnVelocity: 300
+  SpawnPosition: {fileID: 830575723356559795}
+--- !u!114 &8427178858329396308
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 3131526136418914705, guid: 1c629418daad2fe44aec4cc3453d3358,
+    type: 3}
+  m_PrefabInstance: {fileID: 8386351429991998207}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8753589649040129144}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3986795c15b61db409bcb1885e280083, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ObjectTag: Player
+  OutputDirection:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1005560360366102316}
+        m_MethodName: SetHorizontalDirection
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1805226928293303019}
+        m_MethodName: set_Direction
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_TypeName: Assets.Input_Handlers.FloatUnityEvent, Assembly-CSharp, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+--- !u!114 &1805226928293303019
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 5083232176860452654, guid: 1c629418daad2fe44aec4cc3453d3358,
+    type: 3}
+  m_PrefabInstance: {fileID: 8386351429991998207}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8753589649040129144}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f1b4a788cf8f10b4ca3d0d1b0a326fe5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Velocity: 300
+--- !u!1001 &8386351429991998207
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 2809348418247113149, guid: 1c629418daad2fe44aec4cc3453d3358,
+        type: 3}
+      propertyPath: m_Name
+      value: Projectile Spawner
+      objectReference: {fileID: 0}
+    - target: {fileID: 6053115871461973110, guid: 1c629418daad2fe44aec4cc3453d3358,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 16.180012
+      objectReference: {fileID: 0}
+    - target: {fileID: 6053115871461973110, guid: 1c629418daad2fe44aec4cc3453d3358,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -4.527527
+      objectReference: {fileID: 0}
+    - target: {fileID: 6053115871461973110, guid: 1c629418daad2fe44aec4cc3453d3358,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6053115871461973110, guid: 1c629418daad2fe44aec4cc3453d3358,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6053115871461973110, guid: 1c629418daad2fe44aec4cc3453d3358,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6053115871461973110, guid: 1c629418daad2fe44aec4cc3453d3358,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6053115871461973110, guid: 1c629418daad2fe44aec4cc3453d3358,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6053115871461973110, guid: 1c629418daad2fe44aec4cc3453d3358,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 6053115871461973110, guid: 1c629418daad2fe44aec4cc3453d3358,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6053115871461973110, guid: 1c629418daad2fe44aec4cc3453d3358,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6053115871461973110, guid: 1c629418daad2fe44aec4cc3453d3358,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5940889172296061673, guid: 1c629418daad2fe44aec4cc3453d3358,
+        type: 3}
+      propertyPath: OnSpawnStart.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 5940889172296061673, guid: 1c629418daad2fe44aec4cc3453d3358,
+        type: 3}
+      propertyPath: OnSpawnStart.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 5940889172296061673, guid: 1c629418daad2fe44aec4cc3453d3358,
+        type: 3}
+      propertyPath: OnSpawnEnd.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 5940889172296061673, guid: 1c629418daad2fe44aec4cc3453d3358,
+        type: 3}
+      propertyPath: OnOutOfSpawns.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 1c629418daad2fe44aec4cc3453d3358, type: 3}

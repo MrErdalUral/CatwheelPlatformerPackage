@@ -20,7 +20,7 @@ public class CameraController : MonoBehaviour
     public void SetCamera(Level level)
     {
         //Start the movement of the camera towards the new level
-        _cameraMovement.SetTargetPosition2D(level.transform.position);
+        _cameraMovement.SetTargetPosition2D(level.LevelCameraPosition.position);
         //Start the resizing of the orthographic size value of the camera to match the level size
         _cameraResizer.TargetSize = level.LevelCameraSize;
     }

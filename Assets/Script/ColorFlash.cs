@@ -15,12 +15,14 @@ public class ColorFlash : MonoBehaviour
     public Color[] Colors = new Color[] { Color.red, Color.green, Color.blue, Color.yellow };
     public float FlashTime = 0.05f;
 
+    private Color _originalColor;
     private WaitForSeconds FlashForSeconds;
     // Start is called before the first frame update
     void Awake()
     {
         FlashForSeconds = new WaitForSeconds(FlashTime);
         _renderer = GetComponent<SpriteRenderer>();
+        _originalColor = _renderer.color;
     }
 
     void Update()
@@ -42,7 +44,7 @@ public class ColorFlash : MonoBehaviour
     {
         _renderer.color = color;
         yield return FlashForSeconds;
-        _renderer.color = Color.white;
+        _renderer.color = _originalColor;
     }
 }
 

@@ -26,6 +26,7 @@ public class LevelManager : MonoBehaviour
         if (_levels != null)
             for (var i = 0; i < _levels.Count; i++)
             {
+                if(_levels[i] == null) continue;
                 _levels[i].OnLevelStarting.AddListener(UpdateCurrentLevel);
             }
         else

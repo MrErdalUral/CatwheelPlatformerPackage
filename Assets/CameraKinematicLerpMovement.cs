@@ -29,12 +29,15 @@ public class CameraKinematicLerpMovement : MonoBehaviour
     void Update()
     {
         _movingProgress += Time.deltaTime / MoveTime;
-        transform.position = Vector3.Lerp(_startPos, TargetPosition, _movingProgress);
+        var newPos = Vector3.Lerp(_startPos, TargetPosition, _movingProgress);
+        newPos.y = transform.position.y;
+        newPos.z = transform.position.z;
+        transform.position = newPos;
     }
 
     public void SetTargetPosition2D(Vector2 targetPos)
     {
-        TargetPosition = (Vector3)targetPos + transform.position.y * Vector3.forward;
+        TargetPosition = targetPos;
     }
 
     void Awake()

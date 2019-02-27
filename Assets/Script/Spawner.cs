@@ -17,11 +17,15 @@ public class Spawner : MonoBehaviour
     public Vector2 TimerRange;
     public float DelayTime = 0.5f;
     public UnityEvent OnSpawnStart;
-    public GameObjectUnityEvent OnSpawnEnd;
+    public GameObjectUnityEvent OutputSpawnedGameobject;
+    public UnityEvent OnSpawnEnd;
     public UnityEvent OnOutOfSpawns;
     public UnityEvent OnSpawnCooldown;
     public int SpawnCount = 1;
     public Transform SpawnedObjectParent;
+
+    public int BurstCount = 1;
+    public float BurstTimeDelay=0.05f;
 
     [SerializeField]
     private Vector2 _spawnDirection;
@@ -31,6 +35,7 @@ public class Spawner : MonoBehaviour
 
     private float _cooldown;
     private WaitForSeconds _spawnDelay;
+    private WaitForSeconds _burstDelay;
 
     public Vector2 SpawnDirection
     {
@@ -42,6 +47,7 @@ public class Spawner : MonoBehaviour
     void Start()
     {
         _spawnDelay = new WaitForSeconds(DelayTime);
+        _burstDelay = new WaitForSeconds(BurstTimeDelay);
         ResetCooldown();
     }
 
@@ -75,12 +81,16 @@ public class Spawner : MonoBehaviour
         var pos = transform.position;
         if (SpawnPosition)
             pos = SpawnPosition.position;
-
-        var obj = (GameObject)Instantiate(SpawnPrefab, pos, Quaternion.identity, SpawnedObjectParent);
-        var body = obj.GetComponent<Rigidbody2D>();
-        if (body)
-            body.velocity = SpawnDirection * SpawnVelocity;
-        OnSpawnEnd.Invoke(obj);
+        for (int i = 0; i < BurstCount; i++)
+        {
+            var obj = (GameObject)Instantiate(SpawnPrefab, pos, Quaternion.identity, SpawnedObjectParent);
+            var body = obj.GetComponent<Rigidbody2D>();
+            if (body)
+                body.velocity = SpawnDirection * SpawnVelocity;
+            OutputSpawnedGameobject.Invoke(obj);
+            yield return _burstDelay;
+        }
+        OnSpawnEnd.Invoke();
     }
 
     private void ResetCooldown()

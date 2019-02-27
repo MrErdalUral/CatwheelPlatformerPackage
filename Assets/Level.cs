@@ -8,6 +8,8 @@ using UnityEngine.Events;
 public class Level : MonoBehaviour
 {
     public float LevelCameraSize = 70;
+    public Transform LevelCameraPosition;
+    public float LevelSize;
     [SerializeField]
     private LevelState _levelState;
 
