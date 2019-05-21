@@ -25,6 +25,36 @@ PrefabInstance:
       propertyPath: m_Name
       value: Big Red Slime Prefab
       objectReference: {fileID: 0}
+    - target: {fileID: 7563077051986207251, guid: c09429b056991fb4dbfbbc4713dec89d,
+        type: 3}
+      propertyPath: Colors.Array.data[0].r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7563077051986207251, guid: c09429b056991fb4dbfbbc4713dec89d,
+        type: 3}
+      propertyPath: Colors.Array.data[0].g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7563077051986207251, guid: c09429b056991fb4dbfbbc4713dec89d,
+        type: 3}
+      propertyPath: Colors.Array.data[0].b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8553367768428121236, guid: c09429b056991fb4dbfbbc4713dec89d,
+        type: 3}
+      propertyPath: Colors.Array.data[0].r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8553367768428121236, guid: c09429b056991fb4dbfbbc4713dec89d,
+        type: 3}
+      propertyPath: Colors.Array.data[0].g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8553367768428121236, guid: c09429b056991fb4dbfbbc4713dec89d,
+        type: 3}
+      propertyPath: Colors.Array.data[0].b
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6217619340361500754, guid: c09429b056991fb4dbfbbc4713dec89d,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -100,35 +130,15 @@ PrefabInstance:
       propertyPath: m_Color.b
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 8553367768428121236, guid: c09429b056991fb4dbfbbc4713dec89d,
+    - target: {fileID: 8478224462052155091, guid: c09429b056991fb4dbfbbc4713dec89d,
         type: 3}
-      propertyPath: Colors.Array.data[0].r
-      value: 1
+      propertyPath: m_LocalPosition.x
+      value: -6
       objectReference: {fileID: 0}
-    - target: {fileID: 8553367768428121236, guid: c09429b056991fb4dbfbbc4713dec89d,
+    - target: {fileID: 8478224462052155091, guid: c09429b056991fb4dbfbbc4713dec89d,
         type: 3}
-      propertyPath: Colors.Array.data[0].g
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8553367768428121236, guid: c09429b056991fb4dbfbbc4713dec89d,
-        type: 3}
-      propertyPath: Colors.Array.data[0].b
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7563077051986207251, guid: c09429b056991fb4dbfbbc4713dec89d,
-        type: 3}
-      propertyPath: Colors.Array.data[0].r
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7563077051986207251, guid: c09429b056991fb4dbfbbc4713dec89d,
-        type: 3}
-      propertyPath: Colors.Array.data[0].g
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7563077051986207251, guid: c09429b056991fb4dbfbbc4713dec89d,
-        type: 3}
-      propertyPath: Colors.Array.data[0].b
-      value: 1
+      propertyPath: m_LocalPosition.y
+      value: -10.5
       objectReference: {fileID: 0}
     - target: {fileID: 8348002258747363404, guid: c09429b056991fb4dbfbbc4713dec89d,
         type: 3}
@@ -251,20 +261,15 @@ PrefabInstance:
       propertyPath: OutputSpawnedGameobject.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_StringArgument
       value: Attack
       objectReference: {fileID: 0}
-    - target: {fileID: 8478224462052155091, guid: c09429b056991fb4dbfbbc4713dec89d,
+    - target: {fileID: 8348002258747363404, guid: c09429b056991fb4dbfbbc4713dec89d,
         type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -6
+      propertyPath: TimerRange.x
+      value: 4
       objectReference: {fileID: 0}
-    - target: {fileID: 8478224462052155091, guid: c09429b056991fb4dbfbbc4713dec89d,
+    - target: {fileID: 8348002258747363404, guid: c09429b056991fb4dbfbbc4713dec89d,
         type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -10.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 528195947986746136, guid: c09429b056991fb4dbfbbc4713dec89d,
-        type: 3}
-      propertyPath: m_Name
-      value: Projectile Spawner
+      propertyPath: TimerRange.y
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 8518557329540438933, guid: c09429b056991fb4dbfbbc4713dec89d,
         type: 3}
@@ -295,6 +300,21 @@ PrefabInstance:
         type: 3}
       propertyPath: OutputDirection.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 3264414755326979959, guid: c09429b056991fb4dbfbbc4713dec89d,
+        type: 3}
+      propertyPath: m_Size.x
+      value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 3264414755326979959, guid: c09429b056991fb4dbfbbc4713dec89d,
+        type: 3}
+      propertyPath: m_Offset.x
+      value: -15
+      objectReference: {fileID: 0}
+    - target: {fileID: 528195947986746136, guid: c09429b056991fb4dbfbbc4713dec89d,
+        type: 3}
+      propertyPath: m_Name
+      value: Projectile Spawner
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c09429b056991fb4dbfbbc4713dec89d, type: 3}

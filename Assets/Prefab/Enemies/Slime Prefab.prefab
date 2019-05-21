@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 1989412529}
   - component: {fileID: 1989412528}
   - component: {fileID: 1989412527}
+  - component: {fileID: 4579642722990983117}
   m_Layer: 11
   m_Name: Damage Player Check
   m_TagString: Untagged
@@ -119,6 +120,19 @@ MonoBehaviour:
     m_TypeName: Assets.Input_Handlers.BoolUnityEvent, Assembly-CSharp, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
   _listOfCollisions: []
+--- !u!114 &4579642722990983117
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1989412525}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6de010fa2b23735408233d555743585f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Layer: Ghost
 --- !u!1 &6217619340361500761
 GameObject:
   m_ObjectHideFlags: 0
@@ -143,6 +157,8 @@ GameObject:
   - component: {fileID: 2731380584146963646}
   - component: {fileID: 9117353168468991992}
   - component: {fileID: 6732363578613062105}
+  - component: {fileID: 613662697221627695}
+  - component: {fileID: 5392530604119262050}
   m_Layer: 12
   m_Name: Slime Prefab
   m_TagString: Enemy
@@ -295,6 +311,7 @@ MonoBehaviour:
   Acceleration: 5
   FaceDirection: 1
   InvertFaceDirection: 1
+  SpeedModifiers: []
   OutputDirection:
     m_PersistentCalls:
       m_Calls:
@@ -328,6 +345,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9957a743d0ba41d42be0aaaee0bf9506, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  AttackTrigger: Attack
+  AttackContinueTrigger: Attack Continue
 --- !u!114 &8553367768428121236
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -354,6 +373,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a99181ae21728654cb41f9a30c4081f1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  OnDamageOther:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 4579642722990983117}
+        m_MethodName: SetGhost
+        m_Mode: 4
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 1
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_TypeName: Assets.Input_Handlers.Collider2DUnityEvent, Assembly-CSharp, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
   DamageStats:
     Knockback: 250
     KnockbackDirection: {x: 0, y: 0}
@@ -413,6 +448,28 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 4579642722990983117}
+        m_MethodName: SetGhost
+        m_Mode: 4
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 1
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 6217619340361500753}
+        m_MethodName: SetTrigger
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Damage
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: Assets.Input_Handlers.DamageUnityEvent, Assembly-CSharp, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
   OnHealDamage:
@@ -449,6 +506,28 @@ MonoBehaviour:
       - m_Target: {fileID: 3337093144905555032}
         m_MethodName: set_enabled
         m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1989412525}
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 613662697221627695}
+        m_MethodName: SetGhost
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -693,3 +772,31 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: abd78c0e3d2898643a1d80a7551a5c39, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  DestroyOnStart: 0
+  OnStartDestroyTime: 0.25
+--- !u!114 &613662697221627695
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6217619340361500761}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6de010fa2b23735408233d555743585f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Layer: Ghost
+--- !u!114 &5392530604119262050
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6217619340361500761}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 860218efc6a4d6e4eab7c2e886791742, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Offset: {x: 0, y: 0, z: 1}

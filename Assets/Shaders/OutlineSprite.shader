@@ -7,6 +7,7 @@ Shader "Custom/OutlineSprite"
 		[PerRendererData] _MainTex ("Sprite Texture", 2D) = "white" {}
 		_Color ("Tint", Color) = (1,1,1,1)
 		_OutColor ("Outline Color", Color) = (1,1,1,1)
+		_ReplaceWhite("Replace White",Color) = (1,1,1,1)
 		[MaterialToggle] PixelSnap ("Pixel snap", Float) = 0
 	}
 
@@ -50,6 +51,7 @@ Shader "Custom/OutlineSprite"
 			
 			fixed4 _Color;
 			fixed4 _OutColor;
+			fixed4 _ReplaceWhite;
 
 			v2f vert(appdata_t IN)
 			{
@@ -86,6 +88,10 @@ Shader "Custom/OutlineSprite"
 				fixed4 c = SampleSpriteTexture (IN.texcoord) * IN.color;
 				float2 coord = IN.texcoord;
 				c.rgb *= c.a;
+				if( c.r == 1 && c.g==1 && c.b == 1 && c.a == 1)
+				{
+				 	return _ReplaceWhite;
+				}
 				if(c.a == 0)
 				{
 					fixed4 c2 = SampleSpriteTexture (coord+float2(_MainTex_TexelSize.x,0)) * IN.color;

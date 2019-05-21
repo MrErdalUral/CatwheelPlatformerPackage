@@ -172,6 +172,8 @@ GameObject:
   - component: {fileID: 2731380584146963646}
   - component: {fileID: 9117353168468991992}
   - component: {fileID: 6732363578613062105}
+  - component: {fileID: 6309178898254246601}
+  - component: {fileID: 512606077757482470}
   m_Layer: 12
   m_Name: Big Slime Prefab
   m_TagString: Enemy
@@ -326,6 +328,7 @@ MonoBehaviour:
   Acceleration: 5
   FaceDirection: 1
   InvertFaceDirection: 1
+  SpeedModifiers: []
   OutputDirection:
     m_PersistentCalls:
       m_Calls:
@@ -359,6 +362,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9957a743d0ba41d42be0aaaee0bf9506, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  AttackTrigger: Attack
+  AttackContinueTrigger: Attack Continue
 --- !u!114 &8553367768428121236
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -385,6 +390,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a99181ae21728654cb41f9a30c4081f1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  OnDamageOther:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: Assets.Input_Handlers.Collider2DUnityEvent, Assembly-CSharp, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
   DamageStats:
     Knockback: 250
     KnockbackDirection: {x: 0, y: 0}
@@ -444,6 +454,17 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 6217619340361500753}
+        m_MethodName: SetTrigger
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Damage
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: Assets.Input_Handlers.DamageUnityEvent, Assembly-CSharp, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
   OnHealDamage:
@@ -479,6 +500,39 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 3337093144905555032}
         m_MethodName: set_enabled
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1989412525}
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 6309178898254246601}
+        m_MethodName: SetGhost
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 7368654298131130819}
+        m_MethodName: SetActive
         m_Mode: 6
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -746,6 +800,34 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: abd78c0e3d2898643a1d80a7551a5c39, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  DestroyOnStart: 0
+  OnStartDestroyTime: 0.25
+--- !u!114 &6309178898254246601
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6217619340361500761}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6de010fa2b23735408233d555743585f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Layer: Ghost
+--- !u!114 &512606077757482470
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6217619340361500761}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 860218efc6a4d6e4eab7c2e886791742, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Offset: {x: 0, y: 0, z: 1}
 --- !u!1 &7368654298131130819
 GameObject:
   m_ObjectHideFlags: 0
@@ -887,6 +969,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Slime Spawner
+      objectReference: {fileID: 0}
+    - target: {fileID: 6022551579153629473, guid: 585fe3b704cbe784bbd95111c3ed8926,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2817826721266199157, guid: 585fe3b704cbe784bbd95111c3ed8926,
         type: 3}
@@ -1054,6 +1141,11 @@ PrefabInstance:
       propertyPath: OnSpawnStart.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 2817826721266199157, guid: 585fe3b704cbe784bbd95111c3ed8926,
+        type: 3}
+      propertyPath: OnOutOfSpawns.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_IntArgument
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 2407268080439928042, guid: 585fe3b704cbe784bbd95111c3ed8926,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1111,12 +1203,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 585fe3b704cbe784bbd95111c3ed8926, type: 3}
---- !u!1 &528195947986746136 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6022551579153629473, guid: 585fe3b704cbe784bbd95111c3ed8926,
-    type: 3}
-  m_PrefabInstance: {fileID: 6107129215367739961}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &8478224462052155091 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2407268080439928042, guid: 585fe3b704cbe784bbd95111c3ed8926,
@@ -1135,3 +1221,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9454a52d57e03f94f9041cfec85d2ec5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &528195947986746136 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6022551579153629473, guid: 585fe3b704cbe784bbd95111c3ed8926,
+    type: 3}
+  m_PrefabInstance: {fileID: 6107129215367739961}
+  m_PrefabAsset: {fileID: 0}

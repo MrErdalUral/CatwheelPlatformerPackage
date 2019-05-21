@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e2b93b62d288ace44b4b118a8e7efef1, type: 3}
+  m_Name: Iron Knife
+  m_EditorClassIdentifier: 
+  WeaponSprite: {fileID: 21300000, guid: 25debe5b8fe3352498be3dc2baadf004, type: 3}
+  DamageObject1: {fileID: 341074829437803956, guid: 477dce0232dd8fb4aa52d7d3fd9e5278,
+    type: 3}
+  DamageObject2: {fileID: 341074829437803956, guid: 96603c557ad910944b66d8bfd5d910f5,
+    type: 3}
+  DamageObject3: {fileID: 341074829437803956, guid: 477dce0232dd8fb4aa52d7d3fd9e5278,
+    type: 3}
+  WeaponType: 0
+  Damage: 3
+  Range: 3
+  Knockback: 100
+  SpeedModifier: -0.25
+  CanBeDualWielded: 1
